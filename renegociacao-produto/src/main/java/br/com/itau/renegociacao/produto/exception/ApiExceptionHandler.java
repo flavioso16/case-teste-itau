@@ -5,8 +5,6 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.persistence.EntityNotFoundException;
-
 import org.flywaydb.core.internal.util.ExceptionUtils;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -204,9 +202,9 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         return handleExceptionInternal(e, problema, headers, status, request);
     }
 
-    @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<?> handleEntityNotFoundException(
-            EntityNotFoundException e, WebRequest webRequest) {
+    @ExceptionHandler(EntidadeNaoEncontradaException.class)
+    public ResponseEntity<?> handleEntidadeNaoEncontradaException(
+            EntidadeNaoEncontradaException e, WebRequest webRequest) {
 
         HttpStatus status = HttpStatus.NOT_FOUND;
         Problema problema = criarProblemaBuilder(status, e.getMessage()).build();

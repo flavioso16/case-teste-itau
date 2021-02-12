@@ -15,5 +15,8 @@ zuul:
     renegociacao:
       path: /renegociacao/**
       serviceId: RENEGOCIACAO
+    produto:
+      path: /produto/**
+      serviceId: RENEGOCIACAO-PRODUTO
 ribbon:
   ReadTimeout: 60000

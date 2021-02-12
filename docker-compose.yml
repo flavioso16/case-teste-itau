@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+
+  renegociacao-discovery:
+    container_name: renegociacao-discovery
+    build: 
+      context: ./renegociacao-discovery/
+      dockerfile: ./Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - custom-network
+
+  renegociacao:
+    container_name: renegociacao
+    build: 
+      context: ./renegociacao/
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - custom-network
+    depends_on:
+      - renegociacao-discovery
+
+  renegociacao-produto:
+    container_name: renegociacao-produto
+    build: 
+      context: ./renegociacao-produto/
+      dockerfile: ./Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - custom-network
+    depends_on:
+      - renegociacao-discovery
+
+
+  netflix-gateway:
+    container_name: renegociacao-gateway
+    build: 
+      context: ./renegociacao-gateway/
+      dockerfile: ./Dockerfile
+    ports:
+      - "9091:9091"
+    networks:
+      - custom-network
+    depends_on:
+      - renegociacao-discovery
+      - renegociacao-produto
+      - renegociacao
+
+networks:
+  custom-network:
+    driver: bridge
