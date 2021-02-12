@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: renegociacao-gateway
+  profiles:
+    active:
+      dev
+server:
+  port: 9091
+zuul:
+  sensitiveHeaders: Access-Control-Allow-Origin
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  routes:
+    renegociacao:
+      path: /renegociacao/**
+      serviceId: RENEGOCIACAO
+ribbon:
+  ReadTimeout: 60000

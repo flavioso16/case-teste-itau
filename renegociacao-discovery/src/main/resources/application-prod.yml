@@ -1,0 +1,3 @@
+eureka:
+  serviceUrl:
+    defaultZone: http://renegociacao-discovery:8761

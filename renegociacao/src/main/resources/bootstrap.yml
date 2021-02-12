@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: renegociacao
+  profiles:
+    active:
+      dev
+
+server:
+  port: 8080

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: renegociacao-discovery
+  profiles:
+    active:
+      dev
+server:
+  port: 8761

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: renegociacao-produto
+  profiles:
+    active:
+      dev
+
+server:
+  port: 8081
