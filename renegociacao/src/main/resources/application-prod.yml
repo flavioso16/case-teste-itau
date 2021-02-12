@@ -9,3 +9,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://renegociacao-discovery:8761/eureka/
+
+custom:
+  product:
+    url: http://renegociacao-produto:8081/produto
