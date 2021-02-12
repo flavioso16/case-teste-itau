@@ -4,7 +4,7 @@ spring:
       format_sql: true
     show-sql: true
   datasource:
-    url: jdbc:h2:mem:renegociacao-produto
+    url: jdbc:h2:mem:renegociacao_produto
     username: sa
     password: sa
 eureka:

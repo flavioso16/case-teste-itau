@@ -39,3 +39,8 @@ Visualizando logs:
 ```
 sudo docker-compose logs -f
 ```
+
+Rodando no docker swarm
+```
+docker stack deploy --compose-file docker-compose.yml stackdemo
+```

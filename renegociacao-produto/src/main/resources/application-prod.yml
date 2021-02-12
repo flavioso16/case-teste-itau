@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:renegociacao-produto
-    driverClassName: org.h2.Driver
-    username: sa
-    password: sa
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://renegociacao-mysql:3306/renegociacao_produto?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password: root
 
 eureka:
   client:
